@@ -6,29 +6,10 @@ body {
   color: #E9E9E9;
 }
 
-.ct-label {
-  font-size: 15px;
-  color: white;
-}
-
-.ct-grids line {
-  stroke: white;
-}
-
 .text {
   text-align: center;
   font-size: 50px;
   margin-top: 5vh;
-}
-
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
-  user-select: none;           /* Non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 select {
@@ -69,10 +50,4 @@ select {
   font-size: 20px;
   margin: auto;
   display: block;
-}
-
-iframe {
-  display: block;
-  width: 75px;
-  margin: auto;
 }

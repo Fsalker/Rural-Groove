@@ -2,7 +2,8 @@ import React from 'react';
 
 const Welcome = () => (
   <div>
-    <p>Introduceti codul PIN</p>
+    <p className="text">Introduceti codul PIN</p>
+    <>
   </div>
 )
 
