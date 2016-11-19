@@ -15,6 +15,7 @@ class Welcome extends React.Component {
     this.setState({value: ""})
   }
   buttonClick() {
+    this.state.value == "5601" ? hashHistory.push('/Page2') : alert("PIN incorect");
   }
   render() {
     return (
