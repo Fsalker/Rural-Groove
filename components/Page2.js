@@ -6,8 +6,6 @@ const Page2 = () => (
   <div>
     <h1>Bun venit!</h1>
 	<Taggy tagType="Meteo"/>
-	<Taggy tagType="Taxe"/>
-	<Taggy tagType="Fraieri"/>
   </div>
 )
 

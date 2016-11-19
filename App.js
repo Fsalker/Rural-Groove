@@ -1,14 +1,12 @@
 import React from 'react';
 import {hashHistory, Router, IndexRoute, Route} from 'react-router';
 
-import Welcome from './components/Welcome.js';
-import Write from './components/Write.js';
+import Page2 from './components/Page2.js';
 
 const App = () => (
   <Router history={hashHistory} >
    <Route path="/" component={Main} >
-    <IndexRoute component={Welcome} />
-    <Route path="Write" component={Write} />
+    <IndexRoute component={Page2} />
    </Route>
   </Router>
 )
