@@ -15,6 +15,7 @@ const Toateorone = () => (
 function people_to_html()
 {
 	var cod = new Array;
+	cod.push(<option key={key++} value="---">---</option>)
 	cod.push(<option key={key++} value="Toti">Toti</option>)
 	for(var i=0; i<peopleArray.length; ++i) cod.push(<option key={key++} value={peopleArray[i]}>{peopleArray[i]}</option>);
 	

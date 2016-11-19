@@ -1,26 +1,44 @@
 import React from 'react';
-import Toateorone from './Toateorone.js';
+//import Toateorone from './Toateorone.js';
 var tagArray;
-var key = 0;
 
-const Taggy = (props) => (
-  <div>
-  {initTagArray()}
-    <h2>text = {props.tagType}</h2>
-	<select>
-	{tags_to_html()}
-	</select>
-	<Toateorone/>
-  </div>
-)
-
-function tags_to_html()
-{
+class Taggy extends React.Component {
+  constructor() {
+    super();
+	this.state = {
+		value: ""
+	}
+  }
+ 
+  getOptions()
+  {
 	var cod = new Array;
-	cod.push(<option key={key++} value="---">---</option>)
-	for(var i=0; i<tagArray.length; ++i) cod.push(<option key={key++} value={tagArray[i]}>{tagArray[i]}</option>);
+	//cod.push(<option key={key++} value="Nimeni">Nimeni</option>)
+	//cod.push(<option key={key++} selected disabled value></option>)
+	
+	for(var i=0; i<tagArray.length; ++i) 
+		cod.push(
+			<option key={i} value={tagArray[i]}>{tagArray[i]}</option>
+			);
 	
 	return cod;
+  }
+  
+  handlerClick(event)
+  {
+	this.setState({value: event.target.value})
+  }
+
+  render() {
+    return (
+      <div>
+	    {initTagArray()}
+			<select className="inputz">
+				{this.getOptions()}
+			</select>
+	  </div>
+    );
+  }
 }
  
 function initTagArray()

@@ -28,6 +28,28 @@ input {
   font-size: 20px;
 }
 
+h1
+{
+	color: #FFF;
+	text-align: center;
+}
+
+.insidecontainer
+{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.topSmallerVh
+{
+	margin-top:5vh;
+}
+
+.biggerText
+{
+	font-size: 25px;
+}
+
 .button {
   width: 300px;
   height:40px;
@@ -38,4 +60,8 @@ input {
   font-size: 20px;
   margin: auto;
   display: block;
+}
+
+.inputz {
+  color: #000;
 }
