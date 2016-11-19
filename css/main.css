@@ -6,38 +6,26 @@ body {
   color: #E9E9E9;
 }
 
+.centeredtext {
+  text-align: center;
+  margin-top: 30vh;
+}
+
 .text {
   text-align: center;
   font-size: 50px;
   margin-top: 5vh;
+  margin-bottom: 10vh;
 }
 
-select {
-  margin: auto;
-  color: black;
-  margin-top: 80px;
-  margin-bottom: 20px;
+input {
+  color: #000;
   width: 300px;
   height: 40px;
-}
-
-.header {
-  position: absolute;
-  margin: auto;
-  padding-top: 5vh;
-  width: 100vw;
-}
-
-.centeredtextwrapper {
-  display: flex;
-  height: 100vh;
-}
-
-.centeredtext {
-  margin: auto;
-  width: 100vw;
-  padding: 5%;
-  font-size: 25px;
+  margin-bottom: 2vh;
+  text-align: center;
+  border: 0;
+  font-size: 20px;
 }
 
 .button {

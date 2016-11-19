@@ -1,10 +1,37 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
-const Welcome = () => (
-  <div>
-    <p className="text">Introduceti codul PIN</p>
-    <>
-  </div>
-)
+class Welcome extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: "PIN"
+    }
+  }
+  handleInputChange(event) {
+    this.setState({value: event.target.value})
+  }
+  handleInputClick() {
+    this.setState({value: ""})
+  }
+  buttonClick() {
+    this.state.value == "5601" ? hashHistory.push('/Write') : alert("PIN incorect");
+  }
+  render() {
+    return (
+      <div>
+        <p className="text">Introduceti codul PIN</p>
+        <div className="centeredtext">
+          <input type="text"
+           value={this.state.value}
+           onClick={() => this.handleInputClick()}
+           onChange={(event) => this.handleInputChange(event)} />
+          <br />
+          <button className="button" onClick={() => this.buttonClick()}>Intra in cont</button>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default Welcome
