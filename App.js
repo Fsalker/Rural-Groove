@@ -1,11 +1,12 @@
 import React from 'react';
 import {hashHistory, Router, IndexRoute, Route} from 'react-router';
 
+import Welcome from './components/Welcome.js';
+
 const App = () => (
   <Router history={hashHistory} >
    <Route path="/" component={Main} >
     <IndexRoute component={Welcome} />
-    <Route path="..." component={Customize} />
    </Route>
   </Router>
 )
