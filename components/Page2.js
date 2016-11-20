@@ -12,61 +12,30 @@ class Page2 extends React.Component
 		super();
 		
 		this.state = {
-			PplArray: "",
-			version: 0,
-			snagaDB: ""
-			
+			People: ""
 		}
 	}
 	
 	componentWillMount()
 	{
-		console.log("Hi0");
-		this.setState({PplArray: this.getPplArray()});
+		console.log("Mounting Page2 [Before render]");
+		this.queryPeople();
 	}
 	
-	getPplArray()
+	queryPeople()
 	{
-		console.log("Hi1");
-		//fetch(url)
-		
-		var processStatus = function (response) {
-			// status "0" to handle local files fetching (e.g. Cordova/Phonegap etc.)
-			if (response.status === 200 || response.status === 0) {
-				return Promise.resolve(response)
-			} else {
-			return Promise.reject(new Error(response.statusText))
+		console.log("Querying 'People' in Page2");
+		var xhttp = new XMLHttpRequest;
+		xhttp.onreadystatechange = function()
+		{
+			if(xhttp.readyState == 4   &&   xhttp.status == 200)
+			{
+				//console.log("People loaded! Result = "+JSON.parse(xhttp.responseText));
+				this.setState({People: JSON.parse(xhttp.responseText)})
 			}
-		};
-		
-		fetch('../database/db.txt').then(processStatus).then().catch();
-		
-		var parseJson = function (response) {
-			return response.json();
-		};
-
-		var dbObj;
-		
-		//fetch('../database/db.txt').then(parseJson).then(function (data) {console.log('WAITING FOR PROMISE'); console.log(data); dbObj = data;});
-		var idk = this.displaySubscribers;
-		fetch('../database/db.txt').then(parseJson).then(function (data) {idk(data).bind(this)});
-		
-		//console.log('XXXX');
-		//console.log('YYYY ' + dbObj);
-		
-		//return cod.parseJson;
-	}
-	
-	displaySubscribers(data){
-		console.log('RRR ', data);
-		//this.setState({snagaDB: data});
-		//this.setState({value: event.target.value})
-	
-	}
-	
-	test()
-	{
-		//console.log(this.state.PplArray);
+		}.bind(this);
+		xhttp.open("GET", "../database/db.txt", true); // FIXME
+		xhttp.send();
 	}
 	
 	render()
@@ -77,9 +46,9 @@ class Page2 extends React.Component
 			<br/>
 			
 			<div className="centeredtext topSmallerVh">
+				{console.log("Rendering Page 2. People = "+this.state.People)}
 				<h2>Selectati categoria</h2>
-				<Taggy PplArray={this.state.PplArray} hdlDB={this.state.snagaDB}/>
-				{this.test()}
+				<Taggy People={this.state.People}/>
 				<br/>
 				
 				<h2>Formulati mesajul</h2>
