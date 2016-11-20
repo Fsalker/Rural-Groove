@@ -23,7 +23,7 @@ class Mailform extends React.Component {
 	{
 		return(
 			<div>
-			  <textarea rows="10" cols="100" className="inputz biggerText" 
+			  <textarea rows="5" cols="40" className="inputz biggerText" 
 				value={this.state.value}
 				onClick={() => this.handleClick()} 
 				onChange={(event) => this.handleChange(event)} />
