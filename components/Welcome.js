@@ -23,6 +23,7 @@ class Welcome extends React.Component {
         <p className="text">Introduceti codul PIN</p>
         <div className="centeredtext">
           <input type="text"
+		   className="inputPIN"
            value={this.state.value}
            onClick={() => this.handleInputClick()}
            onChange={(event) => this.handleInputChange(event)} />

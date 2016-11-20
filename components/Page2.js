@@ -12,19 +12,18 @@ class Page2 extends React.Component
 		super();
 		
 		this.state = {
-			People: ""
+			People: "",
+			selectValue: ""
 		}
 	}
 	
 	componentWillMount()
 	{
-		console.log("Mounting Page2 [Before render]");
 		this.queryPeople();
 	}
 	
 	queryPeople()
 	{
-		console.log("Querying 'People' in Page2");
 		var xhttp = new XMLHttpRequest;
 		xhttp.onreadystatechange = function()
 		{
@@ -34,8 +33,15 @@ class Page2 extends React.Component
 				this.setState({People: JSON.parse(xhttp.responseText)})
 			}
 		}.bind(this);
-		xhttp.open("GET", "../database/db.txt", true); // FIXME
+		//xhttp.open("GET", "../database/db.txt", true); // FIXME
+		xhttp.open("GET", "http://188.166.30.100/database/db.txt", true); // FIXME
 		xhttp.send();
+	}
+	
+	onUpdateSelectVal(newValue)
+	{
+		console.log("Select value = "+newValue);
+		//this.setState({selectValue: newValue});
 	}
 	
 	render()
@@ -48,7 +54,7 @@ class Page2 extends React.Component
 			<div className="centeredtext topSmallerVh">
 				{console.log("Rendering Page 2. People = "+this.state.People)}
 				<h2>Selectati categoria</h2>
-				<Taggy People={this.state.People}/>
+				<Taggy People={this.state.People} onUpdate={this.onUpdateSelectVal()}/>
 				<br/>
 				
 				<h2>Formulati mesajul</h2>
@@ -56,7 +62,8 @@ class Page2 extends React.Component
 				<br/>
 				
 				<h2>Selectati persoanele ce vor primi mesajul</h2>
-				<Peoplelist/>
+				<Peoplelist People={this.state.People}/>
+				<br/>
 				<br/>
 				
 				<button className="button" onClick={() => sendMessage()}>Trimite mesajul</button>

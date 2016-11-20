@@ -1,6 +1,4 @@
 import React from 'react';
-//import Toateorone from './Toateorone.js';
-var tagArray;
 
 class Taggy extends React.Component {
 	constructor(props) 
@@ -17,7 +15,6 @@ class Taggy extends React.Component {
 		var cod = new Array;
 		//cod.push(<option key={key++} value="Nimeni">Nimeni</option>)
 		//cod.push(<option key={key++} selected disabled value></option>)
-		console.log("Topics = "+this.props.People.topics);
 		for(var i=0; i<this.props.People.topics.length; ++i) 
 		{
 			cod.push(
@@ -26,12 +23,19 @@ class Taggy extends React.Component {
 		}
 		return cod;
 	}
+	
+	handlerChange(event)
+	{
+		console.log("Event target value = "+event.target.value);
+		//this.setState({value: event.target.value});
+		this.props.onUpdate(event.target.value);
+	}
 
 	render() {
 		return (
 			<div>
 				{console.log("Rendering Taggy. People = "+this.props.People)}
-				<select className="inputz">
+				<select className="inputz" onChange={(event) => this.handlerChange(event)}>
 					{this.getOptions()}
 				</select>
 			</div>
