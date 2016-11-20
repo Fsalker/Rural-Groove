@@ -48,8 +48,8 @@ class Page2 extends React.Component
 		var dbObj;
 		
 		//fetch('../database/db.txt').then(parseJson).then(function (data) {console.log('WAITING FOR PROMISE'); console.log(data); dbObj = data;});
-		var idk = this.displaySubscribers;
-		fetch('../database/db.txt').then(parseJson).then(function (data) {idk(data).bind(this)});
+		var idk = (this) => this.displaySubscribers(this);
+		fetch('../database/db.txt').then(parseJson).then(function (data) {idk(data)});
 		
 		//console.log('XXXX');
 		//console.log('YYYY ' + dbObj);
@@ -59,7 +59,7 @@ class Page2 extends React.Component
 	
 	displaySubscribers(data){
 		console.log('RRR ', data);
-		//this.setState({snagaDB: data});
+		this.setState({snagaDB: data});
 		//this.setState({value: event.target.value})
 	
 	}

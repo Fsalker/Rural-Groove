@@ -4,21 +4,27 @@ var tagArray;
 
 class Taggy extends React.Component {
   constructor() {
-    super();
+	  super();
+	  //console.log('QQQQWWEW',this.props.hdlDB);
 	this.state = {
 		value: ""
+		
 	}
   }
  
   getOptions()
   {
+	  return "";
+	  //console.log(this.props);
+	  //console.log(props.PplArray);
+	  
 	var cod = new Array;
 	//cod.push(<option key={key++} value="Nimeni">Nimeni</option>)
 	//cod.push(<option key={key++} selected disabled value></option>)
 	
-	for(var i=0; i<tagArray.length; ++i) 
+	for(var i=0; i<this.props.PplArray.length; ++i) 
 		cod.push(
-			<option key={i} value={tagArray[i]}>{tagArray[i]}</option>
+			<option key={i} value={this.props.PplArray[i]}>{this.props.PplArray[i]}</option>
 			);
 	
 	return cod;
@@ -28,22 +34,22 @@ class Taggy extends React.Component {
   {
 	this.setState({value: event.target.value})
   }
+  
+  test()
+  {
+	  console.log(this.props.PplArray);
+  }
 
   render() {
     return (
       <div>
-	    {initTagArray()}
-			<select className="inputz">
-				{this.getOptions()}
-			</select>
+		{this.test()}
+		<select className="inputz">
+			{this.getOptions()}
+		</select>
 	  </div>
     );
   }
-}
- 
-function initTagArray()
-{
-	tagArray=["Meteo","Taxe","Profesori"];
 }
 
 export default Taggy

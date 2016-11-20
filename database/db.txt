@@ -1,0 +1,32 @@
+{
+	"citizens":
+	[
+		{
+			"phoneNumber":"40749254162", 
+			"lastName":"Bootan", 
+			"firstName":"Lee View",
+			"CNP":"1234567891111", 
+			"subscriberTopics":["info general", "stare meteo", "info agricultori", "info taxe", "orar primarie", "new topics"]
+		},
+		{
+			"phoneNumber":"40786413609", 
+			"lastName":"Gomir", 
+			"firstName":"Igor",
+			"CNP":"1234567892222", 
+			"subscriberTopics":["info general", "info agricultori", "info taxe", "orar primarie", "new topics"]
+		}
+	],
+
+	"new_topicNames":["info random","info stiri"],
+
+	"timetable_primarie":
+	{
+		"Luni":"09:00-16:00", 
+		"Marti":"09:00-16:00", 
+		"Miercuri":"09:00-16:00", 
+		"Joi":"09:00-16:00", 
+		"Vineri":"09:00-16:00"
+	},
+	
+	"topics":["info general", "info agricultori", "info taxe", "orar primarie", "new topics"]
+}
